@@ -1,0 +1,11 @@
+node_modules
+mongo-data
+postgres-data
+pgadmin-data
+backend
+certificates
+migrations
+*-migrations.ts
+dist
+.env
+
