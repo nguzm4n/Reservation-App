@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node dist/server.ts",
+    "start": "node dist/server.js",
     "dev": "nodemon --exec ts-node src/server.ts",
-    "build": "tsc"
+    "docker:dev": "docker-compose up",
+    "build": "tsc "
   },
   "author": "",
   "license": "ISC",
