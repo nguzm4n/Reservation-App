@@ -4,15 +4,19 @@
     "rootDir": "./src",
     "target": "es2022",
     "module": "es2022",
-    "moduleResolution": "Node10",
+    "moduleResolution": "Node",
     "esModuleInterop": true,
     "strict": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "strictPropertyInitialization": false
   },
-  "include": ["src/**/*",
-  "migrations/**/*.ts"],
+  "include": [
+    "./src/*",
+    "./src/**/*",
+    "src/**/*",
+    "migrations/**/*.ts",
+],
   
   "exclude": ["node_modules"]
 }

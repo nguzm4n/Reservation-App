@@ -3,6 +3,7 @@ import { DataSource } from 'typeorm';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 
+
 dotenv.config();
 
 const isProduction = process.env.PRODUCTION === 'true';
@@ -17,9 +18,9 @@ export const TypeORM = new DataSource({
   username: process.env.POSTGRES_USER,
   password: process.env.POSTGRES_PASSWORD,
   database: process.env.POSTGRES_DB_NAME,
-  synchronize: false,
+  synchronize: true,
   logging: !isProduction,
-  entities: [__dirname + "/../models/postgres/*.model.ts"],
+  entities: [__dirname + "/../models/*.model.ts"],
   migrations: [__dirname + '/../../migrations/*.ts'],
   subscribers: [],
   ssl: isProduction
@@ -32,7 +33,7 @@ export const TypeORM = new DataSource({
     : false,
 });
 
-TypeORM.initialize()
+
 export const PostgresConnectDB = async () => {
   try {
     await TypeORM.initialize();
